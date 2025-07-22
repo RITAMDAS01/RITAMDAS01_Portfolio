@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritam Das - Cyber Security Analyst</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for the cybersecurity theme */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000; /* Darker background for better contrast */
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+        .font-orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+        #canvas-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3; /* Adjusted opacity for combined effect */
+        }
+        .section-card {
+            background-color: rgba(10, 25, 47, 0.6); /* Slightly more opaque cards */
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+        .section-card:hover {
+            border-color: rgba(56, 189, 248, 0.5);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.1);
+        }
+        .glow-text {
+            text-shadow: 0 0 8px rgba(56, 189, 248, 0.7);
+        }
+        .btn-primary {
+            background-color: #0ea5e9; /* sky-500 */
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(14, 165, 233, 0.4);
+        }
+        .btn-primary:hover {
+            background-color: #0284c7; /* sky-600 */
+            box-shadow: 0 0 25px rgba(14, 165, 233, 0.7);
+        }
+        .btn-secondary {
+            background-color: transparent;
+            border: 1px solid #0ea5e9;
+            color: #0ea5e9;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: rgba(14, 165, 233, 0.1);
+            color: #38bdf8; /* sky-400 */
+        }
+        .tag {
+            background-color: rgba(14, 165, 233, 0.15);
+            color: #7dd3fc; /* sky-300 */
+            border: 1px solid rgba(14, 165, 233, 0.2);
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: rgba(56, 189, 248, 0.2);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -0.5rem;
+            top: 0.75rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            background-color: #0a0a1a;
+            border: 2px solid #0ea5e9;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas-bg"></canvas>
+
+    <!-- Header -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-opacity-80 backdrop-blur-md border-b border-sky-500/20" style="background-color: rgba(10, 10, 26, 0.8);">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-bold font-orbitron glow-text">RITAM DAS</a>
+                </div>
+                <div class="hidden md:block">
+                    <div id="nav-links" class="ml-10 flex items-baseline space-x-4">
+                        <a href="#education" class="text-gray-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium">Education</a>
+                        <a href="#experience" class="text-gray-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium">Experience</a>
+                        <a href="#projects" class="text-gray-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+                        <a href="#skills" class="text-gray-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium">Skills</a>
+                        <a href="#contact" class="text-gray-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
+
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-[calc(100vh-6rem)] flex items-center">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-6xl font-bold font-orbitron glow-text tracking-wider">Ritam Das</h1>
+                <h2 class="text-2xl md:text-4xl font-semibold text-sky-400 mt-2">Cyber Security Analyst</h2>
+                <p class="mt-6 text-lg text-gray-300 max-w-2xl">
+                    Aspiring cybersecurity professional with hands-on experience in vulnerability management, digital forensics, and network security. Passionate about protecting digital assets and mitigating threats in an evolving landscape.
+                </p>
+                <div class="mt-8 flex flex-wrap gap-4">
+                    <a href="RitamDas_resume_21Jul.pdf" download="RitamDas_Resume.pdf" class="btn-primary px-6 py-3 rounded-lg font-semibold inline-flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+                        Download Resume
+                    </a>
+                    <a href="#contact" class="btn-secondary px-6 py-3 rounded-lg font-semibold">Get In Touch</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="py-20">
+            <h2 class="text-3xl font-bold font-orbitron glow-text mb-12 text-center">Education</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="section-card p-6 rounded-lg">
+                    <h3 class="font-bold text-sky-400 text-lg">Techno India University, Kolkata</h3>
+                    <p class="text-gray-400">Bachelor of Science in Information Technology</p>
+                    <p class="text-sm text-gray-500 mt-1">Aug 2023 - Current</p>
+                    <p class="mt-2 text-lg font-semibold">CGPA: 9/10</p>
+                </div>
+                 <div class="section-card p-6 rounded-lg">
+                    <h3 class="font-bold text-sky-400 text-lg">Sodepur High School</h3>
+                    <p class="text-gray-400">Higher Secondary Education</p>
+                    <p class="text-sm text-gray-500 mt-1">Jun 2021 - May 2023</p>
+                    <p class="mt-2 text-lg font-semibold">Score: 90%</p>
+                </div>
+                <div class="section-card p-6 rounded-lg">
+                    <h3 class="font-bold text-sky-400 text-lg">Sodepur High School</h3>
+                    <p class="text-gray-400">Secondary Education</p>
+                    <p class="text-sm text-gray-500 mt-1">Jan 2015 - May 2021</p>
+                    <p class="mt-2 text-lg font-semibold">Score: 93%</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20">
+            <h2 class="text-3xl font-bold font-orbitron glow-text mb-12 text-center">Experience</h2>
+            <div class="max-w-3xl mx-auto relative timeline">
+                <div class="timeline-item mb-12 pl-12 relative">
+                    <div class="section-card p-6 rounded-lg">
+                        <p class="text-sm text-sky-400">Mar 2025 - Jun 2025</p>
+                        <h3 class="text-xl font-bold mt-1">Cyber Security & Digital Forensics Intern</h3>
+                        <p class="text-gray-400 font-medium">Cyber Secured India - Remote</p>
+                        <ul class="mt-4 list-disc list-inside text-gray-300 space-y-2">
+                            <li>Assisted in digital forensics investigations on simulated systems using Autopsy to analyze evidence and document findings.</li>
+                            <li>Utilized Burp Suite for web application security testing to uncover common vulnerabilities like SQL injection and XSS.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item pl-12 relative">
+                    <div class="section-card p-6 rounded-lg">
+                        <p class="text-sm text-sky-400">Jan 2025 - Feb 2025</p>
+                        <h3 class="text-xl font-bold mt-1">Cyber Security Intern</h3>
+                        <p class="text-gray-400 font-medium">AICTE - Remote</p>
+                        <ul class="mt-4 list-disc list-inside text-gray-300 space-y-2">
+                            <li>Developed a secure steganography web application using Python and Flask.</li>
+                            <li>Applied encryption techniques (AES, XOR) for layered security before data embedding.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20">
+            <h2 class="text-3xl font-bold font-orbitron glow-text mb-12 text-center">Projects</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="section-card p-6 rounded-lg">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-xl font-bold">Steganography App</h3>
+                        <a href="https://github.com/RITAMDAS01" target="_blank" rel="noopener noreferrer" class="btn-secondary px-4 py-1 rounded-md text-sm">GitHub Repo</a>
+                    </div>
+                    <ul class="mt-4 list-disc list-inside text-gray-300 space-y-2">
+                        <li>Designed and implemented a steganography system to conceal data within digital images using LSB (Least Significant Bit) encoding.</li>
+                        <li>Developed a Python-based tool to embed and extract secret messages from image files while preserving image quality.</li>
+                        <li>Enhanced data security by combining steganography with basic encryption (XOR) before embedding.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20">
+            <h2 class="text-3xl font-bold font-orbitron glow-text mb-12 text-center">Technical Skills</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="section-card p-6 rounded-lg">
+                    <h3 class="text-lg font-bold text-sky-400 mb-4">Security Domains</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag px-3 py-1 rounded-full text-sm">Network Security</span>
+                        <span class="tag px-3 py-1 rounded-full text-sm">Vulnerability Management</span>
+                        <span class="tag px-3 py-1 rounded-full text-sm">Incident Response</span>
+                        <span class="tag px-3 py-1 rounded-full text-sm">Threat Analysis</span>
+                        <span class="tag px-3 py-1 rounded-full text-sm">Digital Forensics</span>
+                        <span class="tag px-3 py-1 rounded-full text-sm">Penetration Testing</span>
+                        <span class="tag px-3 py-1 rounded-full text-sm">Web Application Security</span>
+                        <span class="tag px-3 py-1 rounded-full text-sm">Cryptography</span>
+                    </div>
+                </div>
+                <div class="section-card p-6 rounded-lg">
+                    <h3 class="text-lg font-bold text-sky-400 mb-4">Security Tools</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag px-3 py-1 rounded-full text-sm">Splunk</span>
+                        <span class="tag px-3 py-1 rounded-full text-sm">Nessus</span>
+                        <span class="tag px-3 py-1 rounded-full text-sm">Wireshark</span>
+                        <span class="tag px-3 py-1 rounded-full text-sm">Metasploit</span>
+                        <span class="tag px-3 py-1 rounded-full text-sm">Burp Suite</span>
+                        <span class="tag px-3 py-1 rounded-full text-sm">Autopsy</span>
+                        <span class="tag px-3 py-1 rounded-full text-sm">Firewalls</span>
+                        <span class="tag px-3 py-1 rounded-full text-sm">IDS/IPS</span>
+                    </div>
+                </div>
+                 <div class="section-card p-6 rounded-lg">
+                    <h3 class="text-lg font-bold text-sky-400 mb-4">Programming & Scripting</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag px-3 py-1 rounded-full text-sm">Python</span>
+                        <span class="tag px-3 py-1 rounded-full text-sm">C</span>
+                        <span class="tag px-3 py-1 rounded-full text-sm">C++</span>
+                        <span class="tag px-3 py-1 rounded-full text-sm">Java</span>
+                        <span class="tag px-3 py-1 rounded-full text-sm">Bash</span>
+                        <span class="tag px-3 py-1 rounded-full text-sm">SQL</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Certifications Section -->
+        <section id="certifications" class="py-20">
+            <h2 class="text-3xl font-bold font-orbitron glow-text mb-12 text-center">Certifications</h2>
+            <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-4 text-center">
+                <div class="section-card p-4 rounded-lg">Google Cybersecurity</div>
+                <div class="section-card p-4 rounded-lg">IBM Python for Data Science</div>
+                <div class="section-card p-4 rounded-lg">AWS Cloud Practitioner</div>
+                <div class="section-card p-4 rounded-lg">Infosys PenTesting</div>
+                <div class="section-card p-4 rounded-lg">Cisco Networking Basics</div>
+                <div class="section-card p-4 rounded-lg">Cisco Cybersecurity Essentials</div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20">
+            <h2 class="text-3xl font-bold font-orbitron glow-text mb-4 text-center">Contact Me</h2>
+            <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">Feel free to reach out for collaborations or just a friendly chat. You can email me directly or use the form below.</p>
+            <div class="max-w-2xl mx-auto section-card p-8 rounded-lg">
+                <form action="mailto:ritamdas0909@gmail.com" method="post" enctype="text/plain">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-sky-300">Name</label>
+                            <input type="text" name="name" id="name" required class="mt-1 block w-full bg-gray-900/50 border-gray-600 rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500 py-2 px-3">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-sky-300">Email</label>
+                            <input type="email" name="email" id="email" required class="mt-1 block w-full bg-gray-900/50 border-gray-600 rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500 py-2 px-3">
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <label for="message" class="block text-sm font-medium text-sky-300">Message</label>
+                        <textarea id="message" name="message" rows="4" required class="mt-1 block w-full bg-gray-900/50 border-gray-600 rounded-md shadow-sm focus:ring-sky-500 focus:border-sky-500 py-2 px-3"></textarea>
+                    </div>
+                    <div class="mt-6 text-right">
+                        <button type="submit" class="btn-primary px-6 py-3 rounded-lg font-semibold">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-sky-500/20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-gray-400">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://github.com/RITAMDAS01" target="_blank" rel="noopener noreferrer" class="hover:text-sky-400 transition">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
+                </a>
+                <a href="https://linkedin.com/in/ritam-das-99267b284" target="_blank" rel="noopener noreferrer" class="hover:text-sky-400 transition">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="mailto:ritamdas0909@gmail.com" class="hover:text-sky-400 transition">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+                </a>
+            </div>
+            <p>&copy; 2025 Ritam Das. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        // --- Combined Background Animation Script ---
+        const canvas = document.getElementById('canvas-bg');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // --- Digital Rain Globals ---
+        const characters = '0123456789ABCDEF';
+        const fontSize = 16;
+        let columns = Math.floor(canvas.width / fontSize);
+        const drops = [];
+        for (let x = 0; x < columns; x++) {
+            drops[x] = 1;
+        }
+
+        // --- Particle Network Globals ---
+        let particles = [];
+        class Particle {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.size = Math.random() * 1.5 + 0.5;
+                this.speedX = Math.random() * 2 - 1;
+                this.speedY = Math.random() * 2 - 1;
+                this.color = '#0ea5e9';
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.size > 0.1) this.size -= 0.02;
+            }
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            for (let i = 0; i < 100; i++) {
+                particles.push(new Particle(Math.random() * canvas.width, Math.random() * canvas.height));
+            }
+        }
+
+        // --- Main Animation Loop ---
+        function animate() {
+            // --- Draw Digital Rain ---
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'; // Slower fade for longer trails
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#0ea5e9';
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = characters.charAt(Math.floor(Math.random() * characters.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+
+            // --- Draw Particle Network ---
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+
+                for (let j = i; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 100) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = particles[i].color;
+                        ctx.lineWidth = 0.2;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                        ctx.closePath();
+                    }
+                }
+                if (particles[i].size <= 0.3) {
+                    particles.splice(i, 1);
+                    i--;
+                }
+            }
+        }
+        
+        // Use setInterval to control the frame rate, slowing down the animation
+        setInterval(animate, 50); // 50ms interval is about 20 frames per second
+
+        // --- Event Listeners and Initialization ---
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            // Recalculate for digital rain
+            columns = Math.floor(canvas.width / fontSize);
+            drops.length = 0;
+            for (let x = 0; x < columns; x++) {
+                drops[x] = 1;
+            }
+
+            // Re-initialize particles
+            initParticles();
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            for(let i=0; i<3; i++){ // Reduced particle creation on mouse move for performance
+                particles.push(new Particle(e.x, e.y));
+            }
+        });
+
+        initParticles();
+
+
+        // --- Smooth Scrolling Script ---
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('#nav-links a[href^="#"], a.btn-secondary[href^="#"]');
+            const header = document.getElementById('main-header');
+            const headerHeight = header ? header.offsetHeight : 0;
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
